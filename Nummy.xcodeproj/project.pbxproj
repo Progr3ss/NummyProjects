@@ -8,13 +8,29 @@
 
 /* Begin PBXBuildFile section */
 		69EF904520D30A240070A9E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69EF904420D30A240070A9E8 /* AppDelegate.swift */; };
-		69EF904720D30A240070A9E8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69EF904620D30A240070A9E8 /* ViewController.swift */; };
 		69EF904A20D30A240070A9E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69EF904820D30A240070A9E8 /* Main.storyboard */; };
 		69EF904D20D30A240070A9E8 /* Nummy.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 69EF904B20D30A240070A9E8 /* Nummy.xcdatamodeld */; };
 		69EF904F20D30A240070A9E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69EF904E20D30A240070A9E8 /* Assets.xcassets */; };
 		69EF905220D30A240070A9E8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69EF905020D30A240070A9E8 /* LaunchScreen.storyboard */; };
 		69EF905D20D30A240070A9E8 /* NummyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69EF905C20D30A240070A9E8 /* NummyTests.swift */; };
 		69EF906820D30A240070A9E8 /* NummyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69EF906720D30A240070A9E8 /* NummyUITests.swift */; };
+		69EF908320D30AA10070A9E8 /* YNSearchExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69EF907620D30AA10070A9E8 /* YNSearchExtension.swift */; };
+		69EF908420D30AA10070A9E8 /* YNCategoryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69EF907720D30AA10070A9E8 /* YNCategoryButton.swift */; };
+		69EF908520D30AA10070A9E8 /* YNSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69EF907820D30AA10070A9E8 /* YNSearchView.swift */; };
+		69EF908620D30AA10070A9E8 /* YNSearchTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69EF907920D30AA10070A9E8 /* YNSearchTextField.swift */; };
+		69EF908720D30AA10070A9E8 /* YNSearchDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69EF907A20D30AA10070A9E8 /* YNSearchDelegate.swift */; };
+		69EF908820D30AA10070A9E8 /* YNSearchHistoryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69EF907B20D30AA10070A9E8 /* YNSearchHistoryButton.swift */; };
+		69EF908920D30AA10070A9E8 /* YNSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69EF907C20D30AA10070A9E8 /* YNSearch.swift */; };
+		69EF908A20D30AA10070A9E8 /* YNSearchListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69EF907D20D30AA10070A9E8 /* YNSearchListView.swift */; };
+		69EF908B20D30AA10070A9E8 /* YNSearchMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69EF907E20D30AA10070A9E8 /* YNSearchMainView.swift */; };
+		69EF908C20D30AA10070A9E8 /* YNSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69EF907F20D30AA10070A9E8 /* YNSearchViewController.swift */; };
+		69EF908D20D30AA10070A9E8 /* Objectification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69EF908020D30AA10070A9E8 /* Objectification.swift */; };
+		69EF908E20D30AA10070A9E8 /* YNSearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69EF908120D30AA10070A9E8 /* YNSearchModel.swift */; };
+		69EF908F20D30AA10070A9E8 /* YNSearchListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69EF908220D30AA10070A9E8 /* YNSearchListViewCell.swift */; };
+		69EF909120D30AEE0070A9E8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69EF909020D30AEE0070A9E8 /* ViewController.swift */; };
+		69EF909320D30B2B0070A9E8 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69EF909220D30B2B0070A9E8 /* DetailViewController.swift */; };
+		69EF909620D30E7B0070A9E8 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69EF909520D30E7B0070A9E8 /* SearchResult.swift */; };
+		69EF909820D30E9E0070A9E8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69EF909720D30E9E0070A9E8 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +53,6 @@
 /* Begin PBXFileReference section */
 		69EF904120D30A240070A9E8 /* Nummy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nummy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		69EF904420D30A240070A9E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		69EF904620D30A240070A9E8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		69EF904920D30A240070A9E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		69EF904C20D30A240070A9E8 /* Nummy.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Nummy.xcdatamodel; sourceTree = "<group>"; };
 		69EF904E20D30A240070A9E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +64,23 @@
 		69EF906320D30A240070A9E8 /* NummyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NummyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		69EF906720D30A240070A9E8 /* NummyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NummyUITests.swift; sourceTree = "<group>"; };
 		69EF906920D30A240070A9E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		69EF907620D30AA10070A9E8 /* YNSearchExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YNSearchExtension.swift; sourceTree = "<group>"; };
+		69EF907720D30AA10070A9E8 /* YNCategoryButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YNCategoryButton.swift; sourceTree = "<group>"; };
+		69EF907820D30AA10070A9E8 /* YNSearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YNSearchView.swift; sourceTree = "<group>"; };
+		69EF907920D30AA10070A9E8 /* YNSearchTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YNSearchTextField.swift; sourceTree = "<group>"; };
+		69EF907A20D30AA10070A9E8 /* YNSearchDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YNSearchDelegate.swift; sourceTree = "<group>"; };
+		69EF907B20D30AA10070A9E8 /* YNSearchHistoryButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YNSearchHistoryButton.swift; sourceTree = "<group>"; };
+		69EF907C20D30AA10070A9E8 /* YNSearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YNSearch.swift; sourceTree = "<group>"; };
+		69EF907D20D30AA10070A9E8 /* YNSearchListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YNSearchListView.swift; sourceTree = "<group>"; };
+		69EF907E20D30AA10070A9E8 /* YNSearchMainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YNSearchMainView.swift; sourceTree = "<group>"; };
+		69EF907F20D30AA10070A9E8 /* YNSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YNSearchViewController.swift; sourceTree = "<group>"; };
+		69EF908020D30AA10070A9E8 /* Objectification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Objectification.swift; sourceTree = "<group>"; };
+		69EF908120D30AA10070A9E8 /* YNSearchModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YNSearchModel.swift; sourceTree = "<group>"; };
+		69EF908220D30AA10070A9E8 /* YNSearchListViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YNSearchListViewCell.swift; sourceTree = "<group>"; };
+		69EF909020D30AEE0070A9E8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		69EF909220D30B2B0070A9E8 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		69EF909520D30E7B0070A9E8 /* SearchResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
+		69EF909720D30E9E0070A9E8 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,13 +131,16 @@
 		69EF904320D30A240070A9E8 /* Nummy */ = {
 			isa = PBXGroup;
 			children = (
+				69EF909420D30E6E0070A9E8 /* Model */,
+				69EF907520D30A740070A9E8 /* YNSearch */,
 				69EF904420D30A240070A9E8 /* AppDelegate.swift */,
-				69EF904620D30A240070A9E8 /* ViewController.swift */,
 				69EF904820D30A240070A9E8 /* Main.storyboard */,
 				69EF904E20D30A240070A9E8 /* Assets.xcassets */,
 				69EF905020D30A240070A9E8 /* LaunchScreen.storyboard */,
 				69EF905320D30A240070A9E8 /* Info.plist */,
 				69EF904B20D30A240070A9E8 /* Nummy.xcdatamodeld */,
+				69EF909020D30AEE0070A9E8 /* ViewController.swift */,
+				69EF909220D30B2B0070A9E8 /* DetailViewController.swift */,
 			);
 			path = Nummy;
 			sourceTree = "<group>";
@@ -126,6 +161,35 @@
 				69EF906920D30A240070A9E8 /* Info.plist */,
 			);
 			path = NummyUITests;
+			sourceTree = "<group>";
+		};
+		69EF907520D30A740070A9E8 /* YNSearch */ = {
+			isa = PBXGroup;
+			children = (
+				69EF908020D30AA10070A9E8 /* Objectification.swift */,
+				69EF907720D30AA10070A9E8 /* YNCategoryButton.swift */,
+				69EF907C20D30AA10070A9E8 /* YNSearch.swift */,
+				69EF907A20D30AA10070A9E8 /* YNSearchDelegate.swift */,
+				69EF907620D30AA10070A9E8 /* YNSearchExtension.swift */,
+				69EF907B20D30AA10070A9E8 /* YNSearchHistoryButton.swift */,
+				69EF907D20D30AA10070A9E8 /* YNSearchListView.swift */,
+				69EF908220D30AA10070A9E8 /* YNSearchListViewCell.swift */,
+				69EF907E20D30AA10070A9E8 /* YNSearchMainView.swift */,
+				69EF908120D30AA10070A9E8 /* YNSearchModel.swift */,
+				69EF907920D30AA10070A9E8 /* YNSearchTextField.swift */,
+				69EF907820D30AA10070A9E8 /* YNSearchView.swift */,
+				69EF907F20D30AA10070A9E8 /* YNSearchViewController.swift */,
+			);
+			path = YNSearch;
+			sourceTree = "<group>";
+		};
+		69EF909420D30E6E0070A9E8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				69EF909520D30E7B0070A9E8 /* SearchResult.swift */,
+				69EF909720D30E9E0070A9E8 /* Constants.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,9 +323,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				69EF904720D30A240070A9E8 /* ViewController.swift in Sources */,
+				69EF908320D30AA10070A9E8 /* YNSearchExtension.swift in Sources */,
+				69EF909820D30E9E0070A9E8 /* Constants.swift in Sources */,
+				69EF909320D30B2B0070A9E8 /* DetailViewController.swift in Sources */,
+				69EF908A20D30AA10070A9E8 /* YNSearchListView.swift in Sources */,
+				69EF908820D30AA10070A9E8 /* YNSearchHistoryButton.swift in Sources */,
+				69EF908C20D30AA10070A9E8 /* YNSearchViewController.swift in Sources */,
+				69EF908B20D30AA10070A9E8 /* YNSearchMainView.swift in Sources */,
+				69EF908D20D30AA10070A9E8 /* Objectification.swift in Sources */,
+				69EF908520D30AA10070A9E8 /* YNSearchView.swift in Sources */,
+				69EF908920D30AA10070A9E8 /* YNSearch.swift in Sources */,
+				69EF908620D30AA10070A9E8 /* YNSearchTextField.swift in Sources */,
+				69EF909620D30E7B0070A9E8 /* SearchResult.swift in Sources */,
+				69EF908F20D30AA10070A9E8 /* YNSearchListViewCell.swift in Sources */,
 				69EF904D20D30A240070A9E8 /* Nummy.xcdatamodeld in Sources */,
+				69EF908E20D30AA10070A9E8 /* YNSearchModel.swift in Sources */,
+				69EF908420D30AA10070A9E8 /* YNCategoryButton.swift in Sources */,
 				69EF904520D30A240070A9E8 /* AppDelegate.swift in Sources */,
+				69EF909120D30AEE0070A9E8 /* ViewController.swift in Sources */,
+				69EF908720D30AA10070A9E8 /* YNSearchDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
