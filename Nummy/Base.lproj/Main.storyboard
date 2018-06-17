@@ -269,12 +269,24 @@
                                     <outlet property="delegate" destination="dog-rO-jAO" id="XTI-f1-RSI"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mkx-7u-7Uw">
+                                <rect key="frame" x="16" y="20" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="loadData:" destination="dog-rO-jAO" eventType="touchUpInside" id="2Sr-im-x4i"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="mkS-l5-cph" firstAttribute="trailing" secondItem="mkx-7u-7Uw" secondAttribute="trailing" constant="313" id="KQY-p9-hu6"/>
+                            <constraint firstItem="mkx-7u-7Uw" firstAttribute="top" secondItem="mkS-l5-cph" secondAttribute="top" id="RcQ-z3-DtP"/>
+                            <constraint firstItem="mkx-7u-7Uw" firstAttribute="leading" secondItem="mkS-l5-cph" secondAttribute="leading" constant="16" id="tNJ-lK-r9a"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="mkS-l5-cph"/>
                     </view>
                     <connections>
-                        <outlet property="tableView" destination="sDn-GN-Jc1" id="b0T-mB-aFi"/>
+                        <outlet property="dequeTableView" destination="sDn-GN-Jc1" id="b0T-mB-aFi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nzD-bz-jbX" userLabel="First Responder" sceneMemberID="firstResponder"/>

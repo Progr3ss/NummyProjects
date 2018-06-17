@@ -43,7 +43,6 @@ class SearchScreenVC: YNSearchViewController, YNSearchDelegate {
     private var idealPositionImageViewCenter:CGFloat = 0
     private var ideaPositionImageViewLeft:CGFloat = 0
     var searchedIngridents : String?
-    
     var sendDelegator : PassDataDelegate?
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -90,7 +89,7 @@ class SearchScreenVC: YNSearchViewController, YNSearchDelegate {
         super.textFieldDidBeginEditing(textField)
         
 //       SearchScreenVC.sendDelegator.pa
-        
+        self.searchedIngridents = textField.text
         
         if textField == self.textFieldSearch{
             
@@ -110,7 +109,7 @@ class SearchScreenVC: YNSearchViewController, YNSearchDelegate {
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-         print("you search for \(textField.text)")
+//         print("you search for \(textField.text)")
          self.searchedIngridents = textField.text
         performSegue(withIdentifier: "showRecipes", sender: self)
     }
@@ -179,16 +178,15 @@ class SearchScreenVC: YNSearchViewController, YNSearchDelegate {
     
 }
 
-extension SearchScreenVC {
-//    func dataReceived(query: String) {
-//        self.searchedIngridents = query
-//    }
+extension SearchScreenVC : CanReceive{
+    func dataReceived(query: String) {
+        self.searchedIngridents = query
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showRecipes" {
             var recipeVC = segue.destination as! SearchedRecipesVC
             recipeVC.searchedQuery = self.searchedIngridents!
-            
             
 //            recipeVC.delegate = self
 //                recipeVC

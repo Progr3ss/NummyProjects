@@ -10,7 +10,7 @@ import UIKit
 
 class SearchedRecipesVC: UIViewController {
 
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var dequeTableView: UITableView!
     var searchResult:SearchResult?
     var delegate: CanReceive?
     var searchedQuery = ""
@@ -21,11 +21,13 @@ class SearchedRecipesVC: UIViewController {
         // Do any additional setup after loading the view.
 //        getRecipe(query: searchedQuery)
 //        print("searched \(searchedQuery) count \(self.searchResult?.hits.count)")
+//        self.tableView.reloadData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        getRecipe(query: searchedQuery)
+//        getRecipe(query: searchedQuery)
+//        self.tableView.reloadData()
     }
 
     func methodParapeters(ingridents: Int, diet:String, health: String, calories:Int, from : Int,to :Int) -> [String:AnyObject]{
@@ -68,6 +70,9 @@ class SearchedRecipesVC: UIViewController {
         
     }
     
+    @IBAction func loadData(_ sender: Any) {
+        getRecipe(query: searchedQuery)
+    }
     func getRecipe(query: String)  {
         let param =  methodParapeters(ingridents: 5, diet: "balanced", health: "soy-free", calories: 500, from: 0, to: 20)
         let url3 = edamanURLFromParameters(query: query, parameters: param)
@@ -88,12 +93,13 @@ class SearchedRecipesVC: UIViewController {
                 
                 if let jsonObject = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as? [String:Any]{
                     
-                    
-                    DispatchQueue.main.async {
                     self.searchResult = SearchResult(jsonObject)
-                    self.tableView.reloadData()
+                    DispatchQueue.main.async {
+                   self.dequeTableView.reloadData()
                         
-                        print("counted Items =  \(self.searchResult?.hits.count)")
+//                        print("counted Items =  \(self.searchResult?.hits.count)")
+//                        print("recipeName \(self.searchResult?.hits[0].recipe?.label)")
+                        
 //                        print("\(self.searchResult?.hits.first?.recipe)")
                         
                     }
@@ -113,20 +119,50 @@ class SearchedRecipesVC: UIViewController {
 
 }
 extension SearchedRecipesVC : UITableViewDataSource, UITableViewDelegate {
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "recipeCell", for: indexPath) as! RecipeTableViewCell
+        let cell = self.dequeTableView.dequeueReusableCell(withIdentifier: "recipeCell", for: indexPath) as! RecipeTableViewCell
         
-        let recipeIndex = self.searchResult?.hits[indexPath.row]
+        cell.recipeNameLabel.text = "Hello Martn"
         
-        cell.recipeNameLabel.text = recipeIndex?.recipe?.label
+//        if let result = self.searchResult{
+//            print("resulets \(result)")
+//            let recipeIndex = result.hits[indexPath.row].recipe
+//            cell.detailTextLabel?.text = "\(result)"
+////            cell.recipeNameLabel.text = recipeIndex?.label
+//
+////            if let object = result.hits.first?.recipe?.ingredients[indexPath.row]{
+////                cell.textLabel?.text = "Text:"+(object.text)+" another One:"+object.food
+//
+//                //SAME YOU HATE TO USE Search Result object where you need...
+//
+//        }
+//        if let result = self.searchResult {
+//            if let object = result.hits.first?.recipe?.ingredients{
+////                cell.recipeNameLabel.text = objects
+//                cell.textLabel?.text = "Text:"+(object.text)+" another One:"+object.food
+//            }
+//        }
+        
+//        let recipeIndex = self.searchResult?.hits[indexPath.row].recipe
+//        print("Got some = \(recipeIndex)")
+//        cell.recipeNameLabel.text = recipeIndex?.label
         
         return cell
         
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-       return 10
+//       return 10
 //        return (self.searchResult?.hits.count)!
+//        if let result = self.searchResult {
+//            return result.hits.count
+//        }else {
+//            return 10
+//        }
+        
+        return 10
+    
     }
 }
 //
