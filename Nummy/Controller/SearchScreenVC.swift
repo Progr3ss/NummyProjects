@@ -30,8 +30,8 @@ class YNExpandableCell: YNSearchModel {
     var version = "1.1.0"
     var url = "https://github.com/younatics/YNExpandableCell"
 }
-
-class ViewController: YNSearchViewController, YNSearchDelegate {
+//Desing Delegator(Sender : SearchedQuery)
+class SearchScreenVC: YNSearchViewController, YNSearchDelegate {
     
     @IBOutlet weak var buttonback: UIButton!
     @IBOutlet weak var buttonEndEditing: UIButton!
@@ -42,15 +42,20 @@ class ViewController: YNSearchViewController, YNSearchDelegate {
     
     private var idealPositionImageViewCenter:CGFloat = 0
     private var ideaPositionImageViewLeft:CGFloat = 0
+    var searchedIngridents : String?
     
+    var sendDelegator : PassDataDelegate?
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+    
+        
         self.ideaPositionImageViewLeft = self.imageViewSearchLeft.layer.position.x
         
-        let demoCategories = ["Menu", "Animation", "Transition", "TableView", "CollectionView", "Indicator", "Alert", "UIView", "UITextfield", "UITableView", "Swift", "iOS", "Android"]
+        let demoCategories = ["Chicken", "Potatoes", "Pork", "Fish", "Peanut", "Spinach"]
         
-        let demoSearchHistories = ["Menu", "Animation", "Transition", "TableView"]
+        let demoSearchHistories = [""]
         
         let ynSearch = YNSearch()
         ynSearch.setCategories(value: demoCategories)
@@ -79,8 +84,13 @@ class ViewController: YNSearchViewController, YNSearchDelegate {
         
     }
     
+    
+
     override func textFieldDidBeginEditing(_ textField: UITextField) {
         super.textFieldDidBeginEditing(textField)
+        
+//       SearchScreenVC.sendDelegator.pa
+        
         
         if textField == self.textFieldSearch{
             
@@ -97,6 +107,12 @@ class ViewController: YNSearchViewController, YNSearchDelegate {
             
         }
         
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+         print("you search for \(textField.text)")
+         self.searchedIngridents = textField.text
+        performSegue(withIdentifier: "showRecipes", sender: self)
     }
     
     
@@ -158,4 +174,28 @@ class ViewController: YNSearchViewController, YNSearchDelegate {
         
         self.present(vc, animated: true, completion: nil)
     }
+    
+    
+    
+}
+
+extension SearchScreenVC {
+//    func dataReceived(query: String) {
+//        self.searchedIngridents = query
+//    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showRecipes" {
+            var recipeVC = segue.destination as! SearchedRecipesVC
+            recipeVC.searchedQuery = self.searchedIngridents!
+            
+            
+//            recipeVC.delegate = self
+//                recipeVC
+            
+        }
+    }
+    
+    
+    
 }
