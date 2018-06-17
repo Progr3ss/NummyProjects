@@ -69,16 +69,21 @@ class SearchScreenVC: YNSearchViewController, YNSearchDelegate {
         self.navigationController?.setNavigationBarHidden(true, animated: false)
         
         let database1 = YNDropDownMenu(key: "YNDropDownMenu")
-        let database2 = YNSearchData(key: "YNSearchData")
-        let database3 = YNExpandableCell(key: "YNExpandableCell")
-        let database4 = YNExpandableCell(key: "YNExpandableCell")
-        let database5 = YNExpandableCell(key: "YNExpandableCell")
-        let database6 = YNExpandableCell(key: "YNExpandableCell")
-        let database7 = YNExpandableCell(key: "YNExpandableCell")
-        let database8 = YNExpandableCell(key: "YNExpandableCell")
-        let demoDatabase = [database1, database2, database3,database4, database5, database6,database7, database8]
+        var testArray = [String]()
+        for i in demoCategories {
+            testArray.append(i)
+        }
         
-        self.initData(database: demoDatabase)
+//        let database2 = YNSearchData(key: "YNSearchData")
+//        let database3 = YNExpandableCell(key: "YNExpandableCell")
+//        let database4 = YNExpandableCell(key: "YNExpandableCell")
+//        let database5 = YNExpandableCell(key: "YNExpandableCell")
+//        let database6 = YNExpandableCell(key: "YNExpandableCell")
+//        let database7 = YNExpandableCell(key: "YNExpandableCell")
+//        let database8 = YNExpandableCell(key: "YNExpandableCell")
+//        let demoDatabase = [database1, database2, database3,database4, database5, database6,database7, database8]
+        
+        self.initData(database: demoCategories)
         self.setYNCategoryButtonType(type: .colorful)
         
     }

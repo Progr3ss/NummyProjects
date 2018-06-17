@@ -17,6 +17,8 @@ class SearchedRecipesVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        getRecipe(query: searchedQuery)
+        self.dequeTableView.reloadData()
 //        print("searched \(searchedQuery) count \(self.searchResult?.hits.count)")
         // Do any additional setup after loading the view.
 //        getRecipe(query: searchedQuery)
@@ -123,7 +125,18 @@ extension SearchedRecipesVC : UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.dequeTableView.dequeueReusableCell(withIdentifier: "recipeCell", for: indexPath) as! RecipeTableViewCell
         
-        cell.recipeNameLabel.text = "Hello Martn"
+        if let result = self.searchResult {
+            let recipeIndex = result.hits[indexPath.row].recipe
+            print(" recipeindex \(String(describing: recipeIndex?.label!))")
+            cell.textLabeCell.text = recipeIndex?.label!
+            cell.recipeImageVIew.image = UIImage(named: "testImge")
+//            cell.imageView?.image = UIImage(named: "testImage")
+//            cell.recipeNameLabel.text = recipeIndex?.label!
+        }
+        
+        
+        
+//        cell.recipeNameLabel.text = "Hello Martn"
         
 //        if let result = self.searchResult{
 //            print("resulets \(result)")
@@ -152,6 +165,34 @@ extension SearchedRecipesVC : UITableViewDataSource, UITableViewDelegate {
         
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        return self.dequeTableView.bounds.size.height / 2
+//        return 300.0
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let button = UIButton(type: .system)
+        let label1 = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 21))
+        button.setTitle("Filter", for: .normal)
+        button.setTitleColor(UIColor.black, for: .normal)
+        
+        button.backgroundColor = UIColor.lightGray
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
+        
+        return button
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 40
+    }
+    
+    
+    
+//    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+//        return 
+//    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 //       return 10
 //        return (self.searchResult?.hits.count)!
@@ -161,7 +202,9 @@ extension SearchedRecipesVC : UITableViewDataSource, UITableViewDelegate {
 //            return 10
 //        }
         
-        return 10
+        
+//        return 10
+        return (self.searchResult?.hits.count) ?? 0
     
     }
 }
