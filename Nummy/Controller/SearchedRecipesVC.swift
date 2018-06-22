@@ -171,6 +171,11 @@ extension SearchedRecipesVC : UITableViewDataSource, UITableViewDelegate {
 //        return 300.0
     }
     
+    func filterRecipe()  {
+        
+        
+    }
+    
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let button = UIButton(type: .system)
         let label1 = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 21))
@@ -179,6 +184,7 @@ extension SearchedRecipesVC : UITableViewDataSource, UITableViewDelegate {
         
         button.backgroundColor = UIColor.lightGray
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
+//        button.addTarget(self, action: #selector(filterRecipe), for: UIControlEvents.touchUpInside)
         
         return button
     }

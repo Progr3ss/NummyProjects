@@ -88,7 +88,10 @@ class SearchScreenVC: YNSearchViewController, YNSearchDelegate {
         
     }
     
-    
+    override func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+         performSegue(withIdentifier: "showRecipes", sender: self)
+        return true
+    }
 
     override func textFieldDidBeginEditing(_ textField: UITextField) {
         super.textFieldDidBeginEditing(textField)
@@ -98,7 +101,7 @@ class SearchScreenVC: YNSearchViewController, YNSearchDelegate {
         
         if textField == self.textFieldSearch{
             
-            self.buttonback.isHidden = true
+//            self.buttonback.isHidden = true
             self.buttonEndEditing.isHidden = false
             
             if self.idealPositionImageViewCenter == 0{
@@ -116,7 +119,7 @@ class SearchScreenVC: YNSearchViewController, YNSearchDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
 //         print("you search for \(textField.text)")
          self.searchedIngridents = textField.text
-        performSegue(withIdentifier: "showRecipes", sender: self)
+//        performSegue(withIdentifier: "showRecipes", sender: self)
     }
     
     

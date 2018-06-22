@@ -12,6 +12,8 @@
 		691C0A3520D614EA000A45B9 /* SF Pro in Resources */ = {isa = PBXBuildFile; fileRef = 691C0A3320D614EA000A45B9 /* SF Pro */; };
 		691C0A3720D6187B000A45B9 /* RecipeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691C0A3620D6187B000A45B9 /* RecipeTableViewCell.swift */; };
 		691C0A3920D61F51000A45B9 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691C0A3820D61F51000A45B9 /* Protocols.swift */; };
+		691C0A3B20D772D6000A45B9 /* ExploreRecipeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691C0A3A20D772D6000A45B9 /* ExploreRecipeVC.swift */; };
+		691C0A3D20D776DD000A45B9 /* CategoryRowTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691C0A3C20D776DD000A45B9 /* CategoryRowTableViewCell.swift */; };
 		69EF904520D30A240070A9E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69EF904420D30A240070A9E8 /* AppDelegate.swift */; };
 		69EF904A20D30A240070A9E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69EF904820D30A240070A9E8 /* Main.storyboard */; };
 		69EF904D20D30A240070A9E8 /* Nummy.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 69EF904B20D30A240070A9E8 /* Nummy.xcdatamodeld */; };
@@ -62,6 +64,8 @@
 		691C0A3320D614EA000A45B9 /* SF Pro */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "SF Pro"; sourceTree = "<group>"; };
 		691C0A3620D6187B000A45B9 /* RecipeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeTableViewCell.swift; sourceTree = "<group>"; };
 		691C0A3820D61F51000A45B9 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
+		691C0A3A20D772D6000A45B9 /* ExploreRecipeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreRecipeVC.swift; sourceTree = "<group>"; };
+		691C0A3C20D776DD000A45B9 /* CategoryRowTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryRowTableViewCell.swift; sourceTree = "<group>"; };
 		69EF904120D30A240070A9E8 /* Nummy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nummy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		69EF904420D30A240070A9E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		69EF904920D30A240070A9E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -214,6 +218,8 @@
 				69EF909020D30AEE0070A9E8 /* SearchScreenVC.swift */,
 				691C0A2E20D60FA0000A45B9 /* SearchedRecipesVC.swift */,
 				691C0A3620D6187B000A45B9 /* RecipeTableViewCell.swift */,
+				691C0A3A20D772D6000A45B9 /* ExploreRecipeVC.swift */,
+				691C0A3C20D776DD000A45B9 /* CategoryRowTableViewCell.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -359,6 +365,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				691C0A3B20D772D6000A45B9 /* ExploreRecipeVC.swift in Sources */,
 				69EF908320D30AA10070A9E8 /* YNSearchExtension.swift in Sources */,
 				691C0A3920D61F51000A45B9 /* Protocols.swift in Sources */,
 				69EF909820D30E9E0070A9E8 /* Constants.swift in Sources */,
@@ -378,6 +385,7 @@
 				691C0A2F20D60FA0000A45B9 /* SearchedRecipesVC.swift in Sources */,
 				69EF904D20D30A240070A9E8 /* Nummy.xcdatamodeld in Sources */,
 				69EF908E20D30AA10070A9E8 /* YNSearchModel.swift in Sources */,
+				691C0A3D20D776DD000A45B9 /* CategoryRowTableViewCell.swift in Sources */,
 				69EF908420D30AA10070A9E8 /* YNCategoryButton.swift in Sources */,
 				69EF904520D30A240070A9E8 /* AppDelegate.swift in Sources */,
 				69EF909120D30AEE0070A9E8 /* SearchScreenVC.swift in Sources */,
