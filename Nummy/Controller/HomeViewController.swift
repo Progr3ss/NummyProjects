@@ -90,7 +90,7 @@ class HomeViewController: UIViewController {
 
         func bringView(view:UIView){
             self.view.addSubview(view)
-            self.buttonBar.backgroundColor = selectedSegmentIndex == 0 ? exploreView.backgroundColor:forYouView.backgroundColor
+            self.buttonBar.backgroundColor = UIColor.orange
             view.translatesAutoresizingMaskIntoConstraints = false
             view.topAnchor.constraint(equalTo: self.segmentView.bottomAnchor).isActive = true
             view.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive = true
