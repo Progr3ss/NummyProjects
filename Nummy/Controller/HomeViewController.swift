@@ -11,7 +11,6 @@ import UIKit
 class HomeViewController: UIViewController {
     
     
-    @IBOutlet var viewContainer: UIView!
     @IBOutlet weak var segmentView: UIView!
     let segmentedControl = UISegmentedControl()
     let buttonBar = UIView()
@@ -19,23 +18,21 @@ class HomeViewController: UIViewController {
     var exploreView: UIView!
     
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-       setupSegmentControl()
-//        setupViewSwitcher()
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        if self.segmentedControl.superview == nil{
+            setupSegmentControl()
+        }
     }
     
     //MARK: - object to switch segement selection
     @objc func segmentedControlValueChanged(_ sender: UISegmentedControl)  {
-        UIView.animate(withDuration: 0.3) {
-            self.buttonBar.frame.origin.x = (self.segmentedControl.frame.width / CGFloat(self.segmentedControl.numberOfSegments)) * CGFloat(self.segmentedControl.selectedSegmentIndex)
-            self.setupViewSwitcher(selectedSegmentIndex: self.segmentedControl.selectedSegmentIndex)
-            
-        }
-        
+
+        self.setupViewSwitcher(selectedSegmentIndex: self.segmentedControl.selectedSegmentIndex)
     }
     //MARK: - Setup segment control
+    
     func setupSegmentControl()  {
         
         // Do any additional setup after loading the view.
@@ -52,12 +49,12 @@ class HomeViewController: UIViewController {
         
         
         segmentedControl.setTitleTextAttributes([
-            NSAttributedStringKey.font : UIFont(name: "DINCondensed-Bold", size: 18),
+            NSAttributedStringKey.font : UIFont(name: "DINCondensed-Bold", size: 18)!,
             NSAttributedStringKey.foregroundColor: UIColor.lightGray
             ], for: .normal)
         
         segmentedControl.setTitleTextAttributes([
-            NSAttributedStringKey.font : UIFont(name: "DINCondensed-Bold", size: 18),
+            NSAttributedStringKey.font : UIFont(name: "DINCondensed-Bold", size: 18)!,
             NSAttributedStringKey.foregroundColor: UIColor.orange
             ], for: .selected)
         
@@ -71,55 +68,43 @@ class HomeViewController: UIViewController {
 
         // This needs to be false since we are using auto layout constraints
         buttonBar.translatesAutoresizingMaskIntoConstraints = false
-        buttonBar.backgroundColor = UIColor.orange
         segmentView.addSubview(buttonBar)
         // Constrain the top of the button bar to the bottom of the segmented control
-        buttonBar.topAnchor.constraint(equalTo: segmentedControl.bottomAnchor).isActive = true
+        buttonBar.bottomAnchor.constraint(equalTo: segmentView.bottomAnchor).isActive = true
         buttonBar.heightAnchor.constraint(equalToConstant: 5).isActive = true
+        buttonBar.widthAnchor.constraint(equalToConstant: (self.segmentView.frame.width/CGFloat(segmentedControl.numberOfSegments))).isActive = true
         // Constrain the button bar to the left side of the segmented control
         buttonBar.leftAnchor.constraint(equalTo: segmentedControl.leftAnchor).isActive = true
-        // Constrain the button bar to the width of the segmented control divided by the number of segments
-        buttonBar.widthAnchor.constraint(equalTo: segmentedControl.widthAnchor, multiplier: 1 / CGFloat(segmentedControl.numberOfSegments)).isActive = true
-        
-        
-        
         segmentedControl.addTarget(self, action: #selector(segmentedControlValueChanged(_:)), for: UIControlEvents.valueChanged)
-        print("selected \(segmentedControl.selectedSegmentIndex)")
+        self.setupViewSwitcher(selectedSegmentIndex: segmentedControl.selectedSegmentIndex)
     }
     
     //MARK: - Setup custom view
     func setupViewSwitcher(selectedSegmentIndex: Int )  {
         forYouView = ForYouViewController().view
         exploreView = ExploreViewController().view
-        viewContainer.addSubview(forYouView)
-        
-//        print("selected \(segmentedControl.selectedSegmentIndex)")
-        print("segementTest \(selectedSegmentIndex)")
-        if selectedSegmentIndex == 1 {
-//            forYouView.topAnchor
-//            viewContainer.topAnchor
-            forYouView.topAnchor.constraint(equalTo: segmentView.topAnchor).isActive = true
-            forYouView.widthAnchor.constraint(equalTo: segmentView.widthAnchor).isActive = true
-            forYouView.translatesAutoresizingMaskIntoConstraints = false
-//            forYouView.backgroundColor = UIColor.orange
-//            segmentView.addSubview(buttonBar)
-            // Constrain the top of the button bar to the bottom of the segmented control
-            forYouView.topAnchor.constraint(equalTo: viewContainer.bottomAnchor).isActive = true
-            forYouView.heightAnchor.constraint(equalToConstant: 5).isActive = true
-            // Constrain the button bar to the left side of the segmented control
-            forYouView.leftAnchor.constraint(equalTo: segmentedControl.leftAnchor).isActive = true
-            // Constrain the button bar to the width of the segmented control divided by the number of segments
-//            buttonBar.widthAnchor.constraint(equalTo: segmentedControl.widthAnchor, multiplier: 1 / CGFloat(segmentedControl.numberOfSegments)).isActive = true
-            
-            
-            
-            
-            
-            
-            
-//             segmentedControl.topAnchor.constraint(equalTo: segmentView.topAnchor).isActive = true
-            viewContainer.bringSubview(toFront: forYouView)
+
+        UIView.animate(withDuration: 0.3) {
+           self.buttonBar.frame.origin.x = ((self.segmentView.frame.width/CGFloat(self.segmentedControl.numberOfSegments))*CGFloat(selectedSegmentIndex))
         }
+
+        func bringView(view:UIView){
+            self.view.addSubview(view)
+            self.buttonBar.backgroundColor = view.backgroundColor
+            view.translatesAutoresizingMaskIntoConstraints = false
+            view.topAnchor.constraint(equalTo: self.segmentView.bottomAnchor).isActive = true
+            view.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive = true
+            view.rightAnchor.constraint(equalTo: self.view.rightAnchor).isActive = true
+            view.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
+            self.view.bringSubview(toFront: view)
+        }
+        if selectedSegmentIndex == 0 {
+            self.exploreView.removeFromSuperview()
+        }else{
+            self.forYouView.removeFromSuperview()
+        }
+        
+        bringView(view: selectedSegmentIndex == 0 ? self.forYouView : self.exploreView)
 
     }
     
