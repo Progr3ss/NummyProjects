@@ -40,6 +40,7 @@ class SearchScreenVC: YNSearchViewController, YNSearchDelegate {
     @IBOutlet weak var imageViewSearchCenter: UIImageView!
     @IBOutlet weak var imageViewSearchLeft: UIImageView!
     
+    
     private var idealPositionImageViewCenter:CGFloat = 0
     private var ideaPositionImageViewLeft:CGFloat = 0
     var searchedIngridents : String?
@@ -101,7 +102,6 @@ class SearchScreenVC: YNSearchViewController, YNSearchDelegate {
         
         if textField == self.textFieldSearch{
             
-//            self.buttonback.isHidden = true
             self.buttonEndEditing.isHidden = false
             
             if self.idealPositionImageViewCenter == 0{
@@ -118,6 +118,7 @@ class SearchScreenVC: YNSearchViewController, YNSearchDelegate {
     
     func textFieldDidEndEditing(_ textField: UITextField) {
 //         print("you search for \(textField.text)")
+        
          self.searchedIngridents = textField.text
 //        performSegue(withIdentifier: "showRecipes", sender: self)
     }
@@ -130,7 +131,6 @@ class SearchScreenVC: YNSearchViewController, YNSearchDelegate {
     @IBAction func actionEndEdit(_ sender: UIButton) {
         
         self.ynSearchTextfieldcancelButtonClicked()
-        self.buttonback.isHidden = false
         self.buttonEndEditing.isHidden = true
         
         UIView.animate(withDuration: 0.2) {
