@@ -19,6 +19,8 @@ class HomeViewController: UIViewController {
     
     var testTable: UITableView!
     
+    private let forYourViewController = ForYouViewController()
+    private let exploreViewController = ExploreViewController()
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -83,14 +85,16 @@ class HomeViewController: UIViewController {
     
     //MARK: - Setup custom view
     func setupViewSwitcher(selectedSegmentIndex: Int )  {
-        forYouView = ForYouViewController().view
-        exploreView = ExploreViewController().view
+      
+        forYouView = self.forYourViewController.view
+        exploreView = self.exploreViewController.view
 
         UIView.animate(withDuration: 0.3) {
            self.buttonBar.frame.origin.x = ((self.segmentView.frame.width/CGFloat(self.segmentedControl.numberOfSegments))*CGFloat(selectedSegmentIndex))
         }
 
         func bringView(view:UIView){
+            
             self.view.addSubview(view)
             self.buttonBar.backgroundColor = UIColor.orange
             view.translatesAutoresizingMaskIntoConstraints = false
@@ -101,8 +105,16 @@ class HomeViewController: UIViewController {
             self.view.bringSubview(toFront: view)
         }
         if selectedSegmentIndex == 0 {
+            
+            if !self.childViewControllers.contains(self.forYourViewController){
+                self.addChildViewController(forYourViewController)
+            }
+            
             self.exploreView.removeFromSuperview()
         }else{
+            if !self.childViewControllers.contains(self.forYourViewController){
+                self.addChildViewController(exploreViewController)
+            }
             self.forYouView.removeFromSuperview()
         }
         

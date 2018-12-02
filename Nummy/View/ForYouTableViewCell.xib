@@ -22,7 +22,7 @@
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="testImge" translatesAutoresizingMaskIntoConstraints="NO" id="LfH-YW-VRa">
                         <rect key="frame" x="5" y="5" width="577" height="518.5"/>
                     </imageView>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5aD-iO-X3i">
+                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5aD-iO-X3i">
                         <rect key="frame" x="5" y="5" width="577" height="518.5"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="HxM-7b-Ir7">
