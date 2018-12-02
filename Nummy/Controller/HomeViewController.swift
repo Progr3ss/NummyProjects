@@ -17,6 +17,8 @@ class HomeViewController: UIViewController {
     var forYouView: UIView!
     var exploreView: UIView!
     
+    var testTable: UITableView!
+    
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -31,8 +33,8 @@ class HomeViewController: UIViewController {
 
         self.setupViewSwitcher(selectedSegmentIndex: self.segmentedControl.selectedSegmentIndex)
     }
-    //MARK: - Setup segment control
     
+    //MARK: - Setup segment control
     func setupSegmentControl()  {
         
         // Do any additional setup after loading the view.
