@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ForYouViewController" customModule="Nummy" customModuleProvider="target">
             <connections>
+                <outlet property="forYouTableView" destination="LQE-d4-1Na" id="1lh-7T-Kvi"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -19,8 +20,25 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="LQE-d4-1Na">
+                    <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="oxp-xx-Ndf"/>
+                        <outlet property="delegate" destination="-1" id="qQS-ne-coK"/>
+                    </connections>
+                </tableView>
+            </subviews>
             <color key="backgroundColor" red="0.47679090499999999" green="0.75223582980000003" blue="0.9372810721" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="LQE-d4-1Na" secondAttribute="bottom" id="AJR-VH-P0A"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="LQE-d4-1Na" secondAttribute="trailing" id="MnO-2T-rzd"/>
+                <constraint firstItem="LQE-d4-1Na" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="ifl-Dx-nh3"/>
+                <constraint firstItem="LQE-d4-1Na" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="p1l-CH-YBu"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="68" y="150"/>
         </view>
     </objects>
 </document>
