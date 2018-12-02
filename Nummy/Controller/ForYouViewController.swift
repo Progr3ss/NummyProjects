@@ -12,21 +12,18 @@ class ForYouViewController: UIViewController {
     
 
     @IBOutlet weak var forYouTableView: UITableView!
-    
-    
-   
-    
+
     //2
     private let items = ["item 1", "item 2", "item 3", "item 4", "item 5"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        forYouTableView.reloadData()
-//       self.forYouTableView.register(ForYouTableViewCell.self, forCellReuseIdentifier: "forYouCell")
-        // Do any additional setup after loading the view.
+
+        self.forYouTableView.register(UINib(nibName: "ForYouTableViewCell", bundle: nil), forCellReuseIdentifier: "forYouCell")
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
 //        forYouTableView.reloadData()
 //        self.forYouTableView.register(ForYouTableViewCell.self, forCellReuseIdentifier: "forYouCell")
         
@@ -45,8 +42,7 @@ extension ForYouViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = Bundle.main.loadNibNamed("ForYouTableViewCell", owner: self, options: nil)?.first as! ForYouTableViewCell
-        
+        let cell = self.forYouTableView.dequeueReusableCell(withIdentifier: "forYouCell", for: indexPath) as! ForYouTableViewCell
 //
         cell.recipeNameLabel.text = "test1"
 //        cell.sourceNameLabel.text = "test2"
@@ -73,7 +69,7 @@ extension ForYouViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 530
+        return 200
     }
     
     
