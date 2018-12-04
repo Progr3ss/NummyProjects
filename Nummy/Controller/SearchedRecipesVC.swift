@@ -52,7 +52,6 @@ class SearchedRecipesVC: UIViewController {
         let queryItem0 = NSURLQueryItem(name: Constants.EdamamParameterKeys.Query, value: "\(query)")
         let queryItem1 = NSURLQueryItem(name:Constants.EdamamParameterKeys.AppID, value: Constants.APIKeys.app_Id)
         let queryItem2 = NSURLQueryItem(name: Constants.EdamamParameterKeys.App_key, value:Constants.APIKeys.app_Key)
-        
         components.queryItems?.append(queryItem0 as URLQueryItem)
         components.queryItems?.append(queryItem1 as URLQueryItem)
         components.queryItems?.append(queryItem2 as URLQueryItem)
@@ -99,10 +98,6 @@ class SearchedRecipesVC: UIViewController {
                     DispatchQueue.main.async {
                    self.dequeTableView.reloadData()
                         
-//                        print("counted Items =  \(self.searchResult?.hits.count)")
-//                        print("recipeName \(self.searchResult?.hits[0].recipe?.label)")
-                        
-//                        print("\(self.searchResult?.hits.first?.recipe)")
                         
                     }
                 }
@@ -214,7 +209,3 @@ extension SearchedRecipesVC : UITableViewDataSource, UITableViewDelegate {
     
     }
 }
-//
-//extension SearchedRecipesVC: UITableViewDelegate, UITableViewDataSource {
-//    
-//}
